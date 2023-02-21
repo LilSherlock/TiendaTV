@@ -1,0 +1,19 @@
+if ((videoPosition + 1)% videos.length == 0) {
+          console.log(device)
+          const fetchData = async () => {
+            console.log(device)
+
+            try {
+              const querystring = require('querystring');
+              let response = await axios.post('https://tiendatv.qinaya.co/api/api.asp?Action=cicle', querystring.stringify({ device_code: device }))
+              if (response.data.message == 'Ok') {
+                console.log('point')
+              }
+              return
+
+            } catch (error) {
+              console.error(error);
+            }
+          };
+          fetchData()
+        }
